@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<head>
+    <title>ADD MOVIES</title>
+    <style>
+    input{outline: 3px ;
+    color:red;
+    }
+    input::placeholder{
+  color:#4d4dff;
+}
+
+    </style>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter the movie name"  size="30" ><br><br>
+    <input type="text" name="desc" placeholder="Enter the description of the movie" size="30" ><br><br>
+    <input type="text" name="year" placeholder="Enter the year of release of the movie" size="40"><br><br>
+    <input type="file" name="img"><br><br>
+    <input type="submit">
+</form>
+
+</body>
+{% endblock %}
